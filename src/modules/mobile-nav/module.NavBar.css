@@ -1,0 +1,129 @@
+nav {
+  display: flex;
+  padding: var(--spacing-300) 0px;
+  align-items: center;
+  align-self: stretch;
+}
+
+.mobileMenu {
+  display: flex;
+  padding-left: var(--spacing-300);
+  align-items: center;
+  gap: var(--spacing-800);
+  flex: 1 0 0;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.hamburger {
+  display: flex;
+  padding-right: var(--spacing-300);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--spacing-100);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.hamburgerIcon,
+.closeIcon {
+  width: 24px;
+  height: 21px;
+}
+
+/* ============================================= */
+
+.navMenuContainer {
+  display: flex;
+  width: 254px;
+  height: 812px;
+  padding-left: var(--spacing-400);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-600);
+  position: absolute;
+  right: 0px;
+  background: rgba(11, 13, 23, 0.15);
+  backdrop-filter: blur(40px);
+}
+
+.closeButtonContainer {
+  display: flex;
+  padding: var(--spacing-400) 0px;
+  align-items: center;
+  align-self: stretch;
+}
+
+.closeButton {
+  display: flex;
+  padding-right: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--spacing-100);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.hamburger,
+.closeButton:hover {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--spacing-400);
+  align-self: stretch;
+}
+
+.navLinks li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-100);
+  align-self: stretch;
+  list-style: none;
+}
+
+.navLinks li:hover {
+  border-right: 3px solid var(--color-white, #fff);
+  cursor: pointer;
+}
+
+.linkContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-150);
+}
+
+.linkNumber {
+  color: var(--color-white, #fff);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size-desktop-text-preset-8);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.7px;
+}
+
+.linkText {
+  text-decoration: none;
+  color: var(--color-white, #fff);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size-desktop-text-preset-8, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+}
