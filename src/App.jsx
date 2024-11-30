@@ -1,31 +1,27 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import MobileNavBar from "./modules/mobile-nav/MobileNavBar";
+
+// Import components
+import MobileNavBar from "./components/mobile-nav/MobileNavBar";
+
+// Import page components
+import Home from "./pages/home/Home";
+import Destination from "./pages/destination/Destination";
+import Crew from "./pages/crew/Crew";
+import Technology from "./pages/technology/Technology";
 
 export default function App() {
   return (
     <main>
-      {/* Navigation bar */}
-      <MobileNavBar />
-      <div className="mainContent">
-        <div className="hero">
-          {/* Homepage content */}
-          <div className="content">
-            <p className="text-1">SO, YOU WANT TO TRAVEL TO</p>
-            <h1 className="text-2">SPACE</h1>
-            <p className="text-3">
-              Let’s face it; if you want to go to space, you might as well
-              genuinely go to outer space and not hover kind of on the edge of
-              it. Well sit back, and relax because we’ll give you a truly out of
-              this world experience!
-            </p>
-          </div>
-          <div className="buttonContainer">
-            <button className="buttonExplore">
-              <p className="buttonText">EXPLORE</p>
-            </button>
-          </div>
-        </div>
-      </div>
+      <Router>
+        <MobileNavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pages/destination" element={<Destination />} />
+          <Route path="/pages/crew" element={<Crew />} />
+          <Route path="/pages/technology" element={<Technology />} />
+        </Routes>
+      </Router>
     </main>
   );
 }
