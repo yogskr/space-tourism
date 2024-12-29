@@ -130,12 +130,13 @@ nav {
   justify-content: center;
   align-items: flex-start;
   gap: var(--spacing-100);
+  transition: border-right 0.5s ease;
 }
 
-.active {
+.linkState.active {
   border-right: 3px solid var(--color-white, #fff);
 }
-
-.inactive {
-  border: none;
+.navLinks li:hover {
+  border-right: 3px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.5s ease;
 }
