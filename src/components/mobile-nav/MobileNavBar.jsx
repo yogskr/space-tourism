@@ -1,4 +1,4 @@
-import "./module.NavBar.css";
+import "./module.MobileNavBar.css";
 
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
@@ -53,7 +53,7 @@ export default function NavBar() {
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>
-                    `linkState ${isActive ? "active" : "inactive"}`
+                    `linkState ${isActive ? "active" : ""}`
                   }
                   style={{
                     borderRight:
