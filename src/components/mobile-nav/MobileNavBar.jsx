@@ -6,6 +6,9 @@ import { NavLink, useLocation } from "react-router-dom";
 // Import navigation link data
 import { links } from "./data";
 
+// Import hamburger icon
+import { Spin as Hamburger } from "hamburger-react";
+
 export default function NavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const location = useLocation();
@@ -20,13 +23,11 @@ export default function NavBar() {
             alt="Space Tourism logo"
           />
           <div className="hamburger">
-            <img
-              className="hamburgerIcon"
-              src="/assets/shared/icon-hamburger.svg"
-              alt="Hamburger menu icon"
-              onClick={() => {
-                setIsNavOpen(!isNavOpen);
-              }}
+            <Hamburger
+              size={30}
+              color="#fff"
+              toggled={isNavOpen}
+              toggle={setIsNavOpen}
             />
           </div>
         </div>
@@ -35,18 +36,7 @@ export default function NavBar() {
       {/* Navigation menu mobile */}
       {isNavOpen && (
         <aside className="navMenuContainer">
-          <div className="closeButtonContainer">
-            <div className="closeButton">
-              <img
-                className="closeIcon"
-                src="/assets/shared/icon-close.svg"
-                alt="Close icon"
-                onClick={() => {
-                  setIsNavOpen(!isNavOpen);
-                }}
-              />
-            </div>
-          </div>
+          <div className="closeButtonContainer"></div>
           <ul className="navLinks">
             {links.map((link) => (
               <li key={link.id}>
