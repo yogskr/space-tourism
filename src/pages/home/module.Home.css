@@ -71,14 +71,21 @@
 
 .buttonExplore {
   display: flex;
-  width: var(--font-size-desktop-text-preset-1);
-  height: var(--font-size-desktop-text-preset-1);
+  width: 144px;
+  height: 144px;
   justify-content: center;
   align-items: center;
   gap: var(--spacing-100);
-  border: none;
   border-radius: 999px;
   background: var(--color-white, #fff);
+  flex-shrink: 0;
+  border: 88px solid rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.5s 0.15s ease;
+}
+
+.buttonExplore:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 60px rgba(255, 255, 255, 0.1);
 }
 
 .buttonContainer {
