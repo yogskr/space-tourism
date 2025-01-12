@@ -2,6 +2,7 @@ import "./module.MobileNavBar.css";
 
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "motion/react";
 
 // Import navigation link data
 import { links } from "./data";
@@ -34,34 +35,46 @@ export default function NavBar() {
       </nav>
 
       {/* Navigation menu mobile */}
-      {isNavOpen && (
-        <aside className="navMenuContainer">
-          <div className="closeButtonContainer"></div>
-          <ul className="navLinks">
-            {links.map((link) => (
-              <li key={link.id}>
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `linkState ${isActive ? "active" : ""}`
-                  }
-                  style={{
-                    borderRight:
-                      location.pathname === link.path
-                        ? "3px solid #fff"
-                        : "none",
-                  }}
-                >
-                  <div className="linkContent">
-                    <span className="linkNumber">{link.number}</span>
-                    <p className="linkText">{link.title}</p>
-                  </div>
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </aside>
-      )}
+      <AnimatePresence>
+        {isNavOpen && (
+          <motion.aside
+            className="navMenuContainer"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 30,
+            }}
+          >
+            <div className="closeButtonContainer"></div>
+            <ul className="navLinks">
+              {links.map((link) => (
+                <li key={link.id}>
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `linkState ${isActive ? "active" : ""}`
+                    }
+                    style={{
+                      borderRight:
+                        location.pathname === link.path
+                          ? "3px solid #fff"
+                          : "none",
+                    }}
+                  >
+                    <div className="linkContent">
+                      <span className="linkNumber">{link.number}</span>
+                      <p className="linkText">{link.title}</p>
+                    </div>
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </motion.aside>
+        )}
+      </AnimatePresence>
     </>
   );
 }
