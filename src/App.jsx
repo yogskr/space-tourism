@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-
-// Import components
 import MobileNavBar from "./components/mobile-nav/MobileNavBar";
 
 // Import page components
