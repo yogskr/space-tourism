@@ -3,6 +3,7 @@ nav {
   padding: var(--spacing-300) 0px;
   align-items: center;
   align-self: stretch;
+  background-color: transparent;
 }
 
 .mobileMenu {
