@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import "./App.css";
 
 // Import components
@@ -9,6 +10,9 @@ import Home from "./pages/home/Home";
 import Destination from "./pages/destination/Destination";
 import Crew from "./pages/crew/Crew";
 import Technology from "./pages/technology/Technology";
+
+// Function to change the background image based on the page
+const [backgroundImage, setBackgroundImage] = useState("home");
 
 export default function App() {
   return (
