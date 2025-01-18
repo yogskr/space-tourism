@@ -4,23 +4,27 @@ export const links = [
     number: "01",
     title: "Home",
     path: "/",
+    backgroundImage: "home",
   },
   {
     id: 2,
     number: "02",
     title: "Destination",
     path: "/pages/destination",
+    backgroundImage: "destination",
   },
   {
     id: 3,
     number: "03",
     title: "Crew",
     path: "/pages/crew",
+    backgroundImage: "crew",
   },
   {
     id: 4,
     number: "04",
     title: "Technology",
     path: "/pages/technology",
+    backgroundImage: "technology",
   },
 ];
