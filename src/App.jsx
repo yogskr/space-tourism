@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
+import { motion, AnimatePresence } from "motion/react";
 
 // Import components
 import MobileNavBar from "./components/mobile-nav/MobileNavBar";
@@ -25,19 +26,19 @@ const BackgroundWrapper = ({ children }) => {
     const path = location.pathname;
     switch (path) {
       case "/":
-        setBackgroundImage("/assets/home/background-home-tablet.jpg");
+        setBackgroundImage("/assets/home/background-home-mobile.jpg");
         break;
       case "/pages/destination":
         setBackgroundImage(
-          "/assets/destination/background-destination-tablet.jpg"
+          "/assets/destination/background-destination-mobile.jpg"
         );
         break;
       case "/pages/crew":
-        setBackgroundImage("/assets/crew/background-crew-tablet.jpg");
+        setBackgroundImage("/assets/crew/background-crew-mobile.jpg");
         break;
       case "/pages/technology":
         setBackgroundImage(
-          "/assets/technology/background-technology-tablet.jpg"
+          "/assets/technology/background-technology-mobile.jpg"
         );
         break;
       default:
@@ -57,18 +58,36 @@ const BackgroundWrapper = ({ children }) => {
   );
 };
 
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -15 }}
+        transition={{ duration: 0.3 }}
+      >
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/pages/destination" element={<Destination />} />
+          <Route path="/pages/crew" element={<Crew />} />
+          <Route path="/pages/technology" element={<Technology />} />
+        </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
 export default function App() {
   return (
     <Router>
       <BackgroundWrapper>
         <main>
           <MobileNavBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/pages/destination" element={<Destination />} />
-            <Route path="/pages/crew" element={<Crew />} />
-            <Route path="/pages/technology" element={<Technology />} />
-          </Routes>
+          <AnimatedRoutes />
         </main>
       </BackgroundWrapper>
     </Router>
