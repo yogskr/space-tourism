@@ -14,16 +14,16 @@ export default function Destination() {
             <nav className="explanationNavigation">
               <ul>
                 <li>
-                  <p>MOON</p>
+                  <p className="tabText">MOON</p>
                 </li>
                 <li>
-                  <p>MARS</p>
+                  <p className="tabText">MARS</p>
                 </li>
                 <li>
-                  <p>EUROPA</p>
+                  <p className="tabText">EUROPA</p>
                 </li>
                 <li>
-                  <p>TITAN</p>
+                  <p className="tabText">TITAN</p>
                 </li>
               </ul>
             </nav>
