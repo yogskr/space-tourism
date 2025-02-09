@@ -1,2 +1,43 @@
-.destinationContainer {
+/* === Page Title === */
+.pageTitle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-300, 24px);
+  align-self: stretch;
+}
+
+.titleNumber {
+  color: var(--color-white);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  opacity: 0.25;
+}
+
+.titleText {
+  color: var(--color-white);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size-mobile-text-preset-6);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+}
+
+/* === Tab Text */
+.tabText {
+  color: var(--color-white, #fff);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size-mobile-text-preset-8);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.1px;
 }
