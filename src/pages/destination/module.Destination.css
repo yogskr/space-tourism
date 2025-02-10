@@ -22,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: var(--spacing-300, 24px);
+  gap: var(--spacing-300);
   align-self: stretch;
 }
 
