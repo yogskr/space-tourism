@@ -23,8 +23,10 @@
   max-width: 540px;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-300, 24px);
+  gap: var(--spacing-300);
   align-self: stretch;
+  padding-top: var(--spacing-400);
+  padding-bottom: var(--spacing-1200);
 }
 
 .content .text-1 {
