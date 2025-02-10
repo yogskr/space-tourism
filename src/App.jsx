@@ -18,7 +18,7 @@ import Crew from "./pages/crew/Crew";
 import Technology from "./pages/technology/Technology";
 
 // eslint-disable-next-line react/prop-types
-const BackgroundWrapper = ({ children }) => {
+function BackgroundWrapper({ children }) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const location = useLocation();
 
@@ -56,9 +56,9 @@ const BackgroundWrapper = ({ children }) => {
       {children}
     </div>
   );
-};
+}
 
-const AnimatedRoutes = () => {
+function AnimatedRoutes() {
   const location = useLocation();
 
   return (
@@ -79,7 +79,7 @@ const AnimatedRoutes = () => {
       </motion.div>
     </AnimatePresence>
   );
-};
+}
 
 export default function App() {
   return (
