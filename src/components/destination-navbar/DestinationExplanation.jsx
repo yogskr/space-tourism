@@ -4,6 +4,8 @@ import { destinationPlanets } from "../../data.jsx";
 
 export default function DestinationExplanation() {
   const [selectedPlanet, setSelectedPlanet] = useState(destinationPlanets[0]);
+
+  // Function to handle the click event on the planet
   const handlePlanetClick = (planet) => {
     setSelectedPlanet(planet);
   };
@@ -20,9 +22,11 @@ export default function DestinationExplanation() {
           <ul>
             {destinationPlanets.map((planet) => (
               <li
-                className="navLink"
                 key={planet.id}
                 onClick={() => handlePlanetClick(planet)}
+                className={`tabMenu ${
+                  selectedPlanet.id === planet.id ? "active" : ""
+                }`}
               >
                 <p className="tabText">{planet.navTitle}</p>
               </li>
