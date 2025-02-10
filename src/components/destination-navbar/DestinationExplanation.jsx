@@ -37,11 +37,16 @@ export default function DestinationExplanation() {
           <h2 className="title">{selectedPlanet.title}</h2>
           <p className="description">{selectedPlanet.description}</p>
         </div>
+        <div className="spacer"></div>
         <div className="planetStatistics">
-          <p className="textStat">AVG. DISTANCE</p>
-          <h3 className="distance">{selectedPlanet.distance}</h3>
-          <p className="textStat">EST. TRAVEL TIME</p>
-          <h3 className="travelTime">{selectedPlanet.travelTime}</h3>
+          <div className="distanceContainer">
+            <p className="textStat">avg. distance</p>
+            <h3 className="distance">{selectedPlanet.distance}</h3>
+          </div>
+          <div className="travelTimeContainer">
+            <p className="textStat">est. travel time</p>
+            <h3 className="travelTime">{selectedPlanet.travelTime}</h3>
+          </div>
         </div>
       </div>
     </div>
