@@ -45,7 +45,7 @@ export const destinationPlanets = [
     navTitle: "MARS",
     title: "MARS",
     description:
-      "Experience the red planet up close and personal. Take a tour of the Olympus Mons, the largest volcano in the solar system, and the Valles Marineris, the largest canyon.",
+      "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
     distance: "54.6 million km",
     travelTime: "9 months",
     image: "/assets/destination/image-mars.png",
@@ -55,7 +55,7 @@ export const destinationPlanets = [
     navTitle: "EUROPA",
     title: "EUROPA",
     description:
-      "Visit Jupiter’s moon Europa, where you can ice skate on the frozen surface. Take a dip in the subsurface ocean and see the Great Lakes of Europa.",
+      "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
     distance: "628.3 million km",
     travelTime: "3 years",
     image: "/assets/destination/image-europa.png",
@@ -65,7 +65,7 @@ export const destinationPlanets = [
     navTitle: "TITAN",
     title: "TITAN",
     description:
-      "Titan is Saturn’s largest moon. It has a thick atmosphere and methane lakes. Take a boat tour on the Kraken Mare and see the Huygens probe.",
+      "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
     distance: "1.2 billion km",
     travelTime: "7 years",
     image: "/assets/destination/image-titan.png",
