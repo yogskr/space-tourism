@@ -43,8 +43,10 @@ html {
 
   /* Typography Mobile*/
   --font-size-mobile-text-preset-1: 80px;
+  --font-size-mobile-text-preset-2: 56px;
   --font-size-mobile-text-preset-4: 18px;
   --font-size-mobile-text-preset-6: 16px;
+  --font-size-mobile-text-preset-8: 14px;
   --font-size-mobile-text-preset-9: 15px;
 
   /* Typography Desktop */
