@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: var(--spacing-400);
+  gap: var(--spacing-300);
   flex: 1 0 0;
   align-self: stretch;
 }
@@ -88,6 +88,7 @@
   align-items: center;
   gap: var(--spacing-200);
   align-self: stretch;
+  height: 216px;
 }
 
 .title {
@@ -126,6 +127,7 @@
   align-items: center;
   gap: var(--spacing-300);
   align-self: stretch;
+  /* padding-top: var(--spacing-200); */
 }
 
 .distanceContainer,
