@@ -14,6 +14,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  background-color: #0b0d17;
+}
+
 /* Global styles */
 :root {
   /* Spacing */
@@ -38,13 +43,16 @@
 
   /* Typography Mobile*/
   --font-size-mobile-text-preset-1: 80px;
+  --font-size-mobile-text-preset-2: 56px;
   --font-size-mobile-text-preset-4: 18px;
   --font-size-mobile-text-preset-6: 16px;
+  --font-size-mobile-text-preset-8: 14px;
   --font-size-mobile-text-preset-9: 15px;
 
   /* Typography Desktop */
   --font-size-desktop-text-preset-1: 144px;
   --font-size-desktop-text-preset-4: 28px;
   --font-size-desktop-text-preset-6: 20px;
+  --font-size-desktop-text-preset-7: 14px;
   --font-size-desktop-text-preset-8: 16px;
 }

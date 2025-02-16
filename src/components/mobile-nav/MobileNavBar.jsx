@@ -5,7 +5,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
 
 // Import navigation link data
-import { links } from "./data";
+import { links } from "../../data";
 
 // Import hamburger icon
 import { Spin as Hamburger } from "hamburger-react";

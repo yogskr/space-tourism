@@ -1,0 +1,43 @@
+.mainContent {
+  display: flex;
+  padding: var(--spacing-300);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-100);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.destinationContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-300);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+/* === Page Title === */
+.pageTitle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-300);
+  align-self: stretch;
+}
+
+.titleNumber,
+.titleText {
+  color: var(--color-white);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+}
+
+.titleNumber {
+  font-weight: 700;
+  opacity: 0.25;
+}
+
+.titleText {
+  font-weight: 400;
+}
