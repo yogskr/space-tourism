@@ -1,5 +1,5 @@
 import "./module.Destination.css";
-import DestinationExplanation from "../../components/destination-navbar/DestinationExplanation.jsx";
+import DestinationExplanation from "../../components/destination/DestinationExplanation.jsx";
 
 export default function Destination() {
   return (
