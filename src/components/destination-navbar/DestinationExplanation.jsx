@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./module.DestinationExplanation.css";
 import { destinationPlanets } from "../../data.jsx";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function DestinationExplanation() {
   const [selectedPlanet, setSelectedPlanet] = useState(destinationPlanets[0]);
@@ -10,11 +11,29 @@ export default function DestinationExplanation() {
     setSelectedPlanet(planet);
   };
 
+  // Motion Framer fade transition
+  const fadeTransition = {
+    initial: { opacity: 0.5 },
+    animate: { opacity: 1, transition: { ease: ["easeIn", "easeOut"] } },
+    exit: { opacity: 0.5 },
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  };
+
   return (
     <div className="container">
       <div className="imageContainer">
         <figure className="planetImage">
-          <img src={selectedPlanet.image} />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={selectedPlanet.id}
+              src={selectedPlanet.image}
+              alt={selectedPlanet.title}
+              {...fadeTransition}
+            />
+          </AnimatePresence>
         </figure>
       </div>
       <div className="planetInfo">
@@ -33,19 +52,41 @@ export default function DestinationExplanation() {
             ))}
           </ul>
         </nav>
-        <div className="planetDescription">
-          <h2 className="title">{selectedPlanet.title}</h2>
-          <p className="description">{selectedPlanet.description}</p>
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            className="planetDescription"
+            key={selectedPlanet.id}
+            {...fadeTransition}
+          >
+            <h2 className="title">{selectedPlanet.title}</h2>
+            <p className="description">{selectedPlanet.description}</p>
+          </motion.div>
+        </AnimatePresence>
         <div className="spacer"></div>
         <div className="planetStatistics">
           <div className="distanceContainer">
             <p className="textStat">avg. distance</p>
-            <h3 className="distance">{selectedPlanet.distance}</h3>
+            <AnimatePresence mode="wait">
+              <motion.h3
+                className="distance"
+                key={selectedPlanet.id}
+                {...fadeTransition}
+              >
+                {selectedPlanet.distance}
+              </motion.h3>
+            </AnimatePresence>
           </div>
           <div className="travelTimeContainer">
             <p className="textStat">est. travel time</p>
-            <h3 className="travelTime">{selectedPlanet.travelTime}</h3>
+            <AnimatePresence mode="wait">
+              <motion.h3
+                className="travelTime"
+                key={selectedPlanet.id}
+                {...fadeTransition}
+              >
+                {selectedPlanet.travelTime}
+              </motion.h3>
+            </AnimatePresence>
           </div>
         </div>
       </div>
