@@ -108,14 +108,8 @@
   align-items: center;
   flex: 1 0 0;
   align-self: center;
-}
-
-.mask {
-  width: 265spx;
-  height: 265px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 270spx;
+  height: 340px;
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
