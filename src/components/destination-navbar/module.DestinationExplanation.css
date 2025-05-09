@@ -30,7 +30,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--spacing-200);
+  gap: var(--spacing-300);
   align-self: stretch;
 }
 
@@ -125,7 +125,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-300);
+  gap: var(--spacing-200);
   align-self: stretch;
   /* padding-top: var(--spacing-200); */
 }
