@@ -27,7 +27,28 @@ export default function CrewInfo() {
             <nav className="pagination">
               <ul className="crewList">
                 {crewMembers.map((crew) => (
-                  <li key={crew.id} onClick={() => handleCrewMemberClick(crew)}>
+                  <li
+                    key={crew.id}
+                    onClick={() => handleCrewMemberClick(crew)}
+                    style={{
+                      opacity: crew.id === selectedCrew.id ? 0.8 : 0.174363,
+                      cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (crew.id !== selectedCrew.id) {
+                        e.currentTarget.style.opacity = 0.5;
+                        e.currentTarget.style.transition =
+                          "opacity 0.3s ease-in-out";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (crew.id !== selectedCrew.id) {
+                        e.currentTarget.style.opacity = 0.174363;
+                        e.currentTarget.style.transition =
+                          "opacity 0.3s ease-in-out";
+                      }
+                    }}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="11"
@@ -35,13 +56,7 @@ export default function CrewInfo() {
                       viewBox="0 0 11 10"
                       fill="none"
                     >
-                      <circle
-                        opacity="0.174363"
-                        cx="5.5"
-                        cy="5"
-                        r="5"
-                        fill="white"
-                      />
+                      <circle cx="5.5" cy="5" r="5" fill="white" />
                     </svg>
                   </li>
                 ))}
@@ -51,13 +66,11 @@ export default function CrewInfo() {
         </div>
       </div>
       <figure className="crewImageContainer">
-        <div className="mask">
-          <img
-            src={selectedCrew.image}
-            alt={selectedCrew.altImage}
-            className="crewImage"
-          />
-        </div>
+        <img
+          src={selectedCrew.image}
+          alt={selectedCrew.altImage}
+          className="crewImage"
+        />
       </figure>
     </>
   );
