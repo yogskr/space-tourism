@@ -68,7 +68,7 @@
 }
 
 .bioContainer {
-  height: 170px;
+  height: 162px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +109,7 @@
   flex: 1 0 0;
   align-self: center;
   width: 270spx;
-  height: 340px;
+  height: 285px;
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
