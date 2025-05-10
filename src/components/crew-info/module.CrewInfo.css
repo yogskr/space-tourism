@@ -1,0 +1,122 @@
+.crewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-400);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.crewBody {
+  display: flex;
+  max-width: 514px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-500);
+  align-self: stretch;
+}
+
+.explanation {
+  display: flex;
+  padding-top: var(--spacing-300);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-200);
+  align-self: stretch;
+}
+
+.crewDescription {
+  display: flex;
+  max-width: 640px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-300);
+  align-self: stretch;
+}
+
+.descHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-100);
+  align-self: stretch;
+}
+
+.role {
+  font-size: var(--font-size-mobile-text-preset-4);
+  opacity: 0.5;
+}
+
+.name {
+  font-size: var(--font-size-mobile-text-preset-3);
+}
+
+.role,
+.name {
+  color: var(--color-white);
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: Bellefair;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  align-self: stretch;
+}
+
+.bioContainer {
+  height: 162px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio {
+  color: var(--color-blue-300);
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: Barlow;
+  font-size: var(--font-size-mobile-text-preset-9);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.crewList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-200);
+  align-self: stretch;
+  list-style: none;
+}
+
+.crewImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+  align-self: center;
+  width: 270spx;
+  height: 285px;
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.crewImage {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./module.DestinationExplanation.css";
-import { destinationPlanets } from "../../data.jsx";
+import { destinationPlanets } from "../../data";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function DestinationExplanation() {

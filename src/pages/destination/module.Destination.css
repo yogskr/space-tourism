@@ -3,7 +3,7 @@
   padding: var(--spacing-300);
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-100);
+  gap: var(--spacing-200);
   flex: 1 0 0;
   align-self: stretch;
 }
@@ -31,6 +31,7 @@
   color: var(--color-white);
   font-feature-settings: "liga" off, "clig" off;
   font-family: "Barlow Condensed";
+  font-size: var(--font-size-mobile-text-preset-6);
 }
 
 .titleNumber {
