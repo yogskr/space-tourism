@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { crewMembers } from "../../data";
 import "./module.CrewInfo.css";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function CrewInfo() {
   const [selectedCrew, setSelectedCrew] = useState(crewMembers[0]);
@@ -10,20 +11,40 @@ export default function CrewInfo() {
     setSelectedCrew(crew);
   };
 
+  // Motion Framer fade transition
+  const fadeTransition = {
+    initial: { opacity: 0.5 },
+    animate: { opacity: 1, transition: { ease: ["easeIn", "easeOut"] } },
+    exit: { opacity: 0.5 },
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  };
+
   return (
     <>
       <div className="crewContainer">
         <div className="crewBody">
           <div className="explanation">
-            <div className="crewDescription">
-              <div className="descHeader">
-                <h3 className="role">{selectedCrew.role}</h3>
-                <h2 className="name">{selectedCrew.name}</h2>
-              </div>
-              <div className="bioContainer">
-                <p className="bio">{selectedCrew.bio}</p>
-              </div>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                className="crewDescription"
+                key={selectedCrew.id}
+                {...fadeTransition}
+              >
+                {/* Role and Name */}
+                <div className="descHeader">
+                  <h3 className="role">{selectedCrew.role}</h3>
+                  <h2 className="name">{selectedCrew.name}</h2>
+                </div>
+                {/* Description */}
+                <div className="bioContainer">
+                  <p className="bio">{selectedCrew.bio}</p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+            {/* Pagination */}
             <nav className="pagination">
               <ul className="crewList">
                 {crewMembers.map((crew) => (
@@ -65,13 +86,20 @@ export default function CrewInfo() {
           </div>
         </div>
       </div>
-      <figure className="crewImageContainer">
-        <img
-          src={selectedCrew.image}
-          alt={selectedCrew.altImage}
-          className="crewImage"
-        />
-      </figure>
+      {/* Crew Image */}
+      <AnimatePresence mode="wait">
+        <motion.figure
+          className="crewImageContainer"
+          key={selectedCrew.id}
+          {...fadeTransition}
+        >
+          <img
+            src={selectedCrew.image}
+            alt={selectedCrew.altImage}
+            className="crewImage"
+          />
+        </motion.figure>
+      </AnimatePresence>
     </>
   );
 }
