@@ -13,12 +13,11 @@ export default function DestinationExplanation() {
 
   // Motion Framer fade transition
   const fadeTransition = {
-    initial: { opacity: 0.5 },
-    animate: { opacity: 1, transition: { ease: ["easeIn", "easeOut"] } },
-    exit: { opacity: 0.5 },
+    initial: { opacity: 0, x: -10 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 10 },
     transition: {
-      duration: 0.5,
-      ease: "easeOut",
+      duration: 0.3,
     },
   };
 
