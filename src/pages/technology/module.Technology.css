@@ -1,0 +1,16 @@
+.technologyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-300);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-300);
+  align-self: stretch;
+}
