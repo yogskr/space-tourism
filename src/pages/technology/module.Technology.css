@@ -1,7 +1,6 @@
 .mainTechContent {
   display: flex;
-  padding: var(--spacing-300) var(--spacing-300) var(--spacing-600)
-    var(--spacing-300);
+  padding: var(--spacing-300) 18px var(--spacing-300) 18px;
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-100);
