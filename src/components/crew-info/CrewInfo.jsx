@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { crewMembers } from "../../data";
+import { crewMembers, fadeTransition } from "../../data";
 import "./module.CrewInfo.css";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -9,17 +9,6 @@ export default function CrewInfo() {
   // Function to handle the click event on the crew member
   const handleCrewMemberClick = (crew) => {
     setSelectedCrew(crew);
-  };
-
-  // Motion Framer fade transition
-  const fadeTransition = {
-    initial: { opacity: 0.5 },
-    animate: { opacity: 1, transition: { ease: ["easeIn", "easeOut"] } },
-    exit: { opacity: 0.5 },
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
   };
 
   return (
