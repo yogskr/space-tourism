@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./module.DestinationExplanation.css";
-import { destinationPlanets } from "../../data";
+import { destinationPlanets, fadeTransition } from "../../data";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function DestinationExplanation() {
@@ -9,16 +9,6 @@ export default function DestinationExplanation() {
   // Function to handle the click event on the planet
   const handlePlanetClick = (planet) => {
     setSelectedPlanet(planet);
-  };
-
-  // Motion Framer fade transition
-  const fadeTransition = {
-    initial: { opacity: 0, x: -10 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 10 },
-    transition: {
-      duration: 0.3,
-    },
   };
 
   return (
