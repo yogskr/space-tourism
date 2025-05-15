@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { technologyItems } from "../../data";
+import { technologyItems, fadeTransition } from "../../data";
 import "./module.TechnologyInfo.css";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function TechnologyInfo() {
   const [selectedTech, setSelectedTech] = useState(technologyItems[0]);
@@ -12,13 +13,19 @@ export default function TechnologyInfo() {
 
   return (
     <div className="technologyContainer">
-      <figure className="techImageContainer">
-        <img
-          className="techImage"
-          src={selectedTech.imageMobile}
-          alt={selectedTech.altImage}
-        />
-      </figure>
+      <AnimatePresence mode="wait">
+        <motion.figure
+          className="techImageContainer"
+          key={selectedTech.id}
+          {...fadeTransition}
+        >
+          <img
+            className="techImage"
+            src={selectedTech.imageMobile}
+            alt={selectedTech.altImage}
+          />
+        </motion.figure>
+      </AnimatePresence>
       <div className="technologyInfo">
         {/* Pagination */}
         <nav className="techPagination">
@@ -56,6 +63,28 @@ export default function TechnologyInfo() {
             ))}
           </ul>
         </nav>
+        {/* Explanation */}
+        <div className="techDescription">
+          <h2 className="techTitle">THE TERMINOLOGY…</h2>
+          <AnimatePresence mode="wait">
+            <motion.h3
+              className="techName"
+              key={selectedTech.id}
+              {...fadeTransition}
+            >
+              {selectedTech.name}
+            </motion.h3>
+          </AnimatePresence>
+          <AnimatePresence mode="wait">
+            <motion.p
+              className="techText"
+              key={selectedTech.id}
+              {...fadeTransition}
+            >
+              {selectedTech.description}
+            </motion.p>
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );
