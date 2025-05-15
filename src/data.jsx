@@ -1,28 +1,28 @@
 export const links = [
   {
     id: 1,
-    number: "01",
+    number: "00",
     title: "Home",
     path: "/",
     backgroundImage: "home",
   },
   {
     id: 2,
-    number: "02",
+    number: "01",
     title: "Destination",
     path: "/pages/destination",
     backgroundImage: "destination",
   },
   {
     id: 3,
-    number: "03",
+    number: "02",
     title: "Crew",
     path: "/pages/crew",
     backgroundImage: "crew",
   },
   {
     id: 4,
-    number: "04",
+    number: "03",
     title: "Technology",
     path: "/pages/technology",
     backgroundImage: "technology",
@@ -133,3 +133,13 @@ export const technologyItems = [
     altImage: "Space Capsule",
   },
 ];
+
+// Motion Framer Animation
+export const fadeTransition = {
+  initial: { opacity: 0, x: -10 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 10 },
+  transition: {
+    duration: 0.3,
+  },
+};
