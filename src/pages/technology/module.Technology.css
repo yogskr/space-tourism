@@ -1,0 +1,26 @@
+.mainTechContent {
+  display: flex;
+  padding: var(--spacing-300) 18px var(--spacing-300) 18px;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-100);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.technologyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-300);
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-300);
+  align-self: stretch;
+}

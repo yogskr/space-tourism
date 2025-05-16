@@ -1,5 +1,4 @@
 import "./module.MobileNavBar.css";
-
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "motion/react";
