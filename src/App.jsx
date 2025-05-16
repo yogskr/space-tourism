@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
+import { backgroundImages } from "./data";
 import { motion, AnimatePresence } from "motion/react";
 
 // Import components
@@ -26,20 +27,16 @@ function BackgroundWrapper({ children }) {
     const path = location.pathname;
     switch (path) {
       case "/":
-        setBackgroundImage("/assets/home/background-home-mobile.jpg");
+        setBackgroundImage(backgroundImages.home.mobile);
         break;
       case "/pages/destination":
-        setBackgroundImage(
-          "/assets/destination/background-destination-mobile.jpg"
-        );
+        setBackgroundImage(backgroundImages.destination.mobile);
         break;
       case "/pages/crew":
-        setBackgroundImage("/assets/crew/background-crew-mobile.jpg");
+        setBackgroundImage(backgroundImages.crew.mobile);
         break;
       case "/pages/technology":
-        setBackgroundImage(
-          "/assets/technology/background-technology-mobile.jpg"
-        );
+        setBackgroundImage(backgroundImages.technology.mobile);
         break;
       default:
         setBackgroundImage("");
