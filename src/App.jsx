@@ -10,7 +10,7 @@ import { backgroundImages } from "./data";
 import { motion, AnimatePresence } from "motion/react";
 
 // Import components
-import MobileNavBar from "./components/mobile-nav/MobileNavBar";
+import NavigationBar from "./components/navigation/NavigationBar";
 
 // Import page components
 import Home from "./pages/home/Home";
@@ -18,29 +18,47 @@ import Destination from "./pages/destination/Destination";
 import Crew from "./pages/crew/Crew";
 import Technology from "./pages/technology/Technology";
 
+// Helper to get current screen size
+function getScreenType() {
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    return "desktop";
+  } else if (window.matchMedia("(min-width: 768px)").matches) {
+    return "tablet";
+  } else {
+    return "mobile";
+  }
+}
+
+// Helper to get background image based on path and screen type
+function getBackgroundImage(path) {
+  const screenType = getScreenType();
+  switch (path) {
+    case "/":
+      return backgroundImages.home[screenType];
+    case "/pages/destination":
+      return backgroundImages.destination[screenType];
+    case "/pages/crew":
+      return backgroundImages.crew[screenType];
+    case "/pages/technology":
+      return backgroundImages.technology[screenType];
+    default:
+      return "";
+  }
+}
+
 // eslint-disable-next-line react/prop-types
 function BackgroundWrapper({ children }) {
   const [backgroundImage, setBackgroundImage] = useState("");
   const location = useLocation();
 
   useEffect(() => {
-    const path = location.pathname;
-    switch (path) {
-      case "/":
-        setBackgroundImage(backgroundImages.home.mobile);
-        break;
-      case "/pages/destination":
-        setBackgroundImage(backgroundImages.destination.mobile);
-        break;
-      case "/pages/crew":
-        setBackgroundImage(backgroundImages.crew.mobile);
-        break;
-      case "/pages/technology":
-        setBackgroundImage(backgroundImages.technology.mobile);
-        break;
-      default:
-        setBackgroundImage("");
-    }
+    const updateBackground = () => {
+      setBackgroundImage(getBackgroundImage(location.pathname));
+    };
+
+    updateBackground();
+    window.addEventListener("resize", updateBackground);
+    return () => window.removeEventListener("resize", updateBackground);
   }, [location.pathname]);
 
   return (
@@ -83,7 +101,7 @@ export default function App() {
     <Router>
       <BackgroundWrapper>
         <main>
-          <MobileNavBar />
+          <NavigationBar />
           <AnimatedRoutes />
         </main>
       </BackgroundWrapper>
