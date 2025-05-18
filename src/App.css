@@ -6,8 +6,16 @@ main {
 }
 
 .background {
-  width: 100%; /* 375px */
+  width: 100%;
   min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* Media Query Tablet */
+@media (min-width: 768px) {
+  main {
+    width: 768px;
+    height: 1024px;
+  }
 }
