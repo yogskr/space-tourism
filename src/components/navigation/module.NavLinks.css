@@ -1,0 +1,107 @@
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--spacing-400);
+  align-self: stretch;
+}
+
+.navLinks li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-100);
+  align-self: stretch;
+  list-style: none;
+}
+
+.linkNumber {
+  color: var(--color-white, #fff);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size-desktop-text-preset-8);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.7px;
+}
+
+.linkText {
+  text-decoration: none;
+  color: var(--color-white, #fff);
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size-desktop-text-preset-8, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+}
+
+.linkContent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-150);
+}
+
+.linkState {
+  text-decoration: none;
+  display: flex;
+  width: 222px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-100);
+  box-sizing: border-box;
+  border-right: 3px solid transparent;
+}
+
+.linkState.active {
+  border-right: 3px solid var(--color-white, #fff);
+}
+
+.linkState:hover {
+  border-right: 3px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.5s 0.25s ease-in-out;
+}
+
+/* Navigation Menu Tablet */
+@media (min-width: 768px) {
+  .navLinks {
+    display: flex;
+    flex-direction: row;
+    min-width: 488px;
+    padding: 0px var(--spacing-500);
+    gap: var(--spacing-600);
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1 0 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(40px);
+  }
+
+  .linkState {
+    height: 96px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--spacing-100);
+    box-sizing: border-box;
+    border-right: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .linkState.active {
+    border-bottom: 3px solid var(--color-white, #fff);
+    border-right: none;
+  }
+
+  .linkState:hover {
+    border-right: none;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.5s 0.25s ease-in-out;
+  }
+}
